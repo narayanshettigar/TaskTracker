@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct TaskTrackerApp: App {
+    @StateObject var listViewModel : ListViewModel = ListViewModel()
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
+            NavigationView {
                 ListView()
             }
+            .environmentObject(listViewModel)
         }
     }
 }
